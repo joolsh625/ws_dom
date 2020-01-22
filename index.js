@@ -12,16 +12,69 @@
 'use strict';
 
 function id() {
-    return "Replace This With Your Student ID";
+    return "UP894547";
     // e.g. return "UP654321";
 }
 
 function fn() {
-    return "Replace This With Your First Name";
+    return "Jools";
 }
 
 function sn() {
-    return "Replace This With Your Surname";
+    return "Hattey";
 }
 
 // add your functions here
+
+function replaceText(elementValue, stringValue) {
+    elementValue.textContent = stringValue;
+    
+}
+
+function addTextTo(elementValue, stringValue) {
+    elementValue.textContent += stringValue;
+}
+
+function moreBears() {
+    let bear = document.querySelector("#animals");
+    bear.setAttribute("src", "http://placebear.com/400/200");
+    bear.setAttribute("alt", "A bear.");
+    bear.setAttribute("title", "A BEAR!");
+}
+
+function setId(elementValue, stringValue) {
+    elementValue.setAttribute("id", stringValue);
+    return elementValue;
+}
+
+function setClass(elementValue, stringValue) {
+    elementValue.setAttribute("class", stringValue);
+    return elementValue;
+}
+
+function addAClass(elementValue, stringValue) {
+    elementValue.classList.add(stringValue);
+    return elementValue;
+}
+s
+function removeAClass(elementValue, stringValue) {
+    elementValue.classList.remove(stringValue);
+    return elementValue;
+}
+
+function newElement(name) {
+    const div = document.createElement(name);
+    return div
+}
+
+function findElementById(ID) {
+    return document.querySelector("#"+ID);
+}
+
+function findElementsByQuery(query) {
+    return document.querySelectorAll(query);
+}
+
+function reverseList(list) {
+    
+}
