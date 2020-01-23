@@ -43,12 +43,12 @@ function moreBears() {
 }
 
 function setId(elementValue, stringValue) {
-    elementValue.setAttribute("id", stringValue);
+    elementValue.id = stringValue;
     return elementValue;
 }
 
 function setClass(elementValue, stringValue) {
-    elementValue.setAttribute("class", stringValue);
+    elementValue.className = stringValue;
     return elementValue;
 }
 
@@ -64,7 +64,7 @@ function removeAClass(elementValue, stringValue) {
 
 function newElement(name) {
     const div = document.createElement(name);
-    return div
+    return div;
 }
 
 function findElementById(ID) {
@@ -75,21 +75,37 @@ function findElementsByQuery(query) {
     return document.querySelectorAll(query);
 }
 
-function reverseList(listElement) {
-    let listArray = listElement
-    let x = listElement.length;
-    for(let i=0; i<listElement.length; i++) {
-        listElement[x-1].replaceText() = listArray[i];
-
+function reverseList(listSelector) {
+    let listElement = document.querySelector(listSelector);
+    let x = listElement.childNodes.length - 1;
+    for(let i=0; i<listElement.childNodes.length; i++) {
+        listElement.appendChild(listElement.childNodes[x]);
         x--;
+    }
+    return listElement;
+}
+
+function mover(elementSelectorMove, elementsSelectorAppend) {
+    const element1 = document.querySelector(elementSelectorMove);
+    const element2 = document.querySelector(elementsSelectorAppend);
+
+    element2.appendChild(element1);
+}
+
+function filler(listElement, stringArray) {
+    for(const x of stringArray) {
+        const a = document.createElement('li');
+
+        a.textContent = x;
+
+        listElement.appendChild(a);
     }
 }
 
 function dupe(inputSelector) {
-    if(inputSelector.parentElement === undefined) {
+    const inputElement = document.querySelector(inputSelector);
 
-    } else {
-        inputSelector.parentElement.appendChild(inputSelector.clone());
-    }
+    inputElement.parentElement.appendChild(inputElement.cloneNode());
+
     
 }
