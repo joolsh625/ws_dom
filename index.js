@@ -56,7 +56,7 @@ function addAClass(elementValue, stringValue) {
     elementValue.classList.add(stringValue);
     return elementValue;
 }
-s
+
 function removeAClass(elementValue, stringValue) {
     elementValue.classList.remove(stringValue);
     return elementValue;
@@ -75,6 +75,21 @@ function findElementsByQuery(query) {
     return document.querySelectorAll(query);
 }
 
-function reverseList(list) {
+function reverseList(listElement) {
+    let listArray = listElement
+    let x = listElement.length;
+    for(let i=0; i<listElement.length; i++) {
+        listElement[x-1].replaceText() = listArray[i];
+
+        x--;
+    }
+}
+
+function dupe(inputSelector) {
+    if(inputSelector.parentElement === undefined) {
+
+    } else {
+        inputSelector.parentElement.appendChild(inputSelector.clone());
+    }
     
 }
